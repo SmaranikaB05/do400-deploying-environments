@@ -23,7 +23,8 @@ pipeline{
       environment { QUAY = credentials('QUAY_USER') } 
        steps { 
          sh '''
-           ./mvnw quarkus:add-extension \ -Dextensions="kubernetes,container-image-jib" 
+           ./mvnw quarkus:add-extension \ 
+           -Dextensions="kubernetes,container-image-jib" 
           '''
          sh ''' 
           ./mvnw package -DskipTests \ 
